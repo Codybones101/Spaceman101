@@ -1,13 +1,41 @@
 body {
-    
+    background-image: url("/bg-space.jpeg");
     background-color: aquamarine;
     height: auto;
     width: auto;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
+
+
     
 
 h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: purple;
+    font-size: 100px;
+    
 
 }
 
+h2 {
+    display: flex;
+    justify-content: center;
+}
+
+h3 {
+    display: flex;
+    position: bottom;
+    justify-content: center;
+    margin-top: 80px;
+    font-size: 40px;
+}
+
+.notify-btn {
+    display: flex;
+    font-size: 25px;
+    align-items: center;
+}

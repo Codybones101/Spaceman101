@@ -5,17 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
-    <script src="js/main.js"></script>
+    <script defer src="js/main.js"></script>
     <title>Document</title>
 </head>
 
 <body>
-    <h1>Spaceman></h1>
-    <h2>Guess the word!</h2>
-    <h3>Select a letter below</h3>
-
-    <h4></h4>
-    
-    
+    <div class="wrapper">
+        <h1>Spaceman</h1>
+        <h3>Guess the word & win the game!</h3>
+        <div class="letter-div"></div>
+        <p>Get a hint if needed</p>
+        <div class="hint-div hidden">
+            <p>Hint:</p>
+            <p class="hint-text"></p>
+        </div>
+        <div class="word-div"></div>
+        <h3>Lives left: <span class="lives">6</span></h3>
+        <div class="row hint-div">
+            <button class="hint-btn">Hint</button>
+            <button class="reset-btn"></button>
+        </div>
+    </div>
+    <div class="notify if hidden">
+        <h2>Game OVER</h2>
+        <h3 class="notify-content">You won!!</h3>
+        <h4>Correct Word: <span class="notify-span"></span></h4>
+        <button class="notify-btn">Play again :)</button>
+    </div>
 </body>
 </html>
+
+        
+    
+    
+    
