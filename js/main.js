@@ -41,6 +41,7 @@ const spaceMan = document.querySelector('img')
 
 
 
+
   /*----- event listeners -----*/
 letterEls.addEventListener('click', handleClick) 
 answerBoxEls.addEventListener('click', handleClick)
@@ -63,8 +64,22 @@ document.getElementById('letters').addEventListener('click', handleClick)
 
 
   function handleClick (evt) {
-    console.log(evt.target)
+      const letter = evt.target.textContent
+    if(gameStatus || evt.target.tagName !== 'BUTTON' || wrongGuesses.includes(letter) || secretWord.includes(letter)) return;
+    console.log(evt.target.textContent)
+    if(secretWord.includes(letter)) {
+       secretWord.forEach((char, idx) => {
+        if(char === letter) wordStatus[idx] = letter
+       } )
+    } else {
+        wrongGuesses.push(letter)
+    }
+    
+    render();
   }
+    
+
+
 
 
 
@@ -72,6 +87,8 @@ document.getElementById('letters').addEventListener('click', handleClick)
     answerBoxEls.textContent = wordStatus.join('')
     spaceMan.src = `img/spaceman-${wrongGuesses.length}.jpg`;
   }
+
+  
 //     renderAnswerBoxes()
 //   }
 
