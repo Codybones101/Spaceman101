@@ -75,9 +75,13 @@ h4 {
 }
   
 .wrapper {
+    display: flex;
+    flex-direction: column;
     width: 800px;
     margin: auto;
     height: 90%;
+    align-content: center;
+    justify-content: center;
     }
 
 .hint-div {
@@ -161,4 +165,15 @@ margin-right: 500px;
 
 .notify-content {
     visibility: hidden;
+}
+
+#man {
+    
+    height: 100px;
+    width: 100px;
+    margin: 40px auto;
+    
+    
+
+
 }
