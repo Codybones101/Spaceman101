@@ -1,41 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.css">
-    <script defer src="js/main.js"></script>
-    <title>Document</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/main.css">
+        <script defer src="js/main.js"></script>
+        <title>Spaceman Game</title>
+    </head>
+    <body>
+        <div class='wrapper'>
+            <h1>Spaceman</h1>
+            <h2>Guess the word & win the game!</h2>
+            <div class='hint-div hidden'>
+                <!-- <p id='hintId'>Hint:</p> -->
 
-<body>
-    <div class="wrapper">
-        <h1>Spaceman</h1>
-        <h3>Guess the word & win the game!</h3>
-        <div class="letter-div"></div>
-        <p>Get a hint if needed</p>
-        <div class="hint-div hidden">
-            <p>Hint:</p>
-            <p class="hint-text"></p>
-        </div>
-        <div class="word-div"></div>
-        <h3>Lives left: <span class="lives">6</span></h3>
-        <div class="row hint-div">
-            <button class="hint-btn">Hint</button>
-            <button class="reset-btn"></button>
+            </div>
+                      
+            <div id='letters'> 
+                <div id="a">A</div>
+                <div id="b">B</div>
+                <div id="c">C</div>
+                <div id="d">D</div>
+                <div id="e">E</div>
+                <div id="f">F</div>
+                <div id="g">G</div>
+                <div id="h">H</div>
+                <div id="i">I</div>
+                <div id="j">J</div>
+                <div id="k">K</div>
+                <div id="l">L</div>
+                <div id="m">M</div>
+                <div id="n">N</div>
+                <div id="o">O</div>
+                <div id="p">P</div>
+                <div id="q">Q</div>
+                <div id="r">R</div>
+                <div id="s">S</div>
+                <div id="t">T</div>
+                <div id="u">U</div>
+                <div id="v">V</div>
+                <div id="w">W</div>
+                <div id="x">X</div>
+                <div id="y">Y</div>
+                <div id="z">Z</div>
+            </div>
+           
+           
+           <container id='container'>
+            <div id="answer-spaces">
+            </div>
+            </container>
+            <h4>Lives left: <span class='lives'>6</span></h3>
+
+            <div class='row hint-div'>
+                <button id="hint-btn">Hint</button>
+            </div>
+                
+        
+            <div class='notify if hidden'>
+                <h3 class='gm-ovr'>Game OVER</h3>
+                <h3 class='notify-content'>You won!!</h3>
+                <h4>Correct Word: <span class='notify-span'></span></h4>
+                <button class='notify-btn'>Play again :)</button>
         </div>
     </div>
-    <div class="notify if hidden">
-        <h2>Game OVER</h2>
-        <h3 class="notify-content">You won!!</h3>
-        <h4>Correct Word: <span class="notify-span"></span></h4>
-        <button class="notify-btn">Play again :)</button>
-    </div>
-</body>
+    </body>
 </html>
 
+            
         
-    
-    
-    
+        
+        

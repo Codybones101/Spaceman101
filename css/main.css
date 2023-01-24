@@ -1,8 +1,14 @@
+* {
+    box-sizing: border-box;
+}
+
+
+
 body {
     background-image: url("/bg-space.jpeg");
-    background-color: aquamarine;
-    height: auto;
-    width: auto;
+    height: 100vh;
+    width: 100vw;
+    background-image: cover;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -17,25 +23,141 @@ h1 {
     align-items: center;
     color: purple;
     font-size: 100px;
+}
     
 
-}
+
 
 h2 {
     display: flex;
+    position: bottom;
     justify-content: center;
+    margin-top: 1vmin;
+    font-size: 40px;
+    color: aqua;
 }
 
 h3 {
     display: flex;
     position: bottom;
     justify-content: center;
-    margin-top: 80px;
+    margin-top: 1vmin;
     font-size: 40px;
+    color: aqua;
+    
 }
+
+
+h4 {
+    display: flex;
+    justify-content: center;
+    position: center;
+    color: aqua;
+    font-size: 20px;
+
+
+}
+
+
+.notify-if-hidden {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.lives {
+    color: red;
+}
+
+#hintId {
+    color: purple;
+    font-size: 20px;
+}
+  
+.wrapper {
+    width: 800px;
+    margin: auto;
+    height: 90%;
+    }
+
+.hint-div {
+display: flex;
+color: chartreuse;
+
+}
+.hint-btn {
+display: flex ;
+cursor: pointer;
+margin-right: 500px;
+}
+
 
 .notify-btn {
     display: flex;
-    font-size: 25px;
-    align-items: center;
+    justify-content: center;
+    
+    font-size: 30px;   
+    margin-left: 300px;
+    cursor: pointer;
+}
+
+#letters {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    justify-items: center;
+
+}
+
+#letters > div {
+    padding: 10px;
+    text-align: center;
+    background-color: white;
+    cursor: pointer;
+
+}
+
+.hint-div {
+    display: flex;
+    justify-content: center; 
+}
+
+#hintHelp-id {
+    display: flex;
+    justify-content: left;
+    color: whitesmoke;
+
+}
+
+
+
+#answer-spaces {
+   display: flex;
+   cursor: pointer;
+
+}
+
+#answer-letter {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    
+    gap: 30px;
+    
+}
+
+#answer-spaces > div {
+    padding: 15px;
+    text-align: center;
+    background-color: white;
+    margin-top: 50px;
+    
+}
+
+.gm-ovr {
+    visibility: hidden;
+}
+
+.notify-content {
+    visibility: hidden;
 }
