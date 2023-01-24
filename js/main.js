@@ -12,6 +12,8 @@ const WORD_BANK = ['APPLE','STONE', 'CIRCLE', 'BACON', 'POINT', 'HOUSE', 'GROOM'
  /*----- constants -----*/
 
 
+
+
  
 
 
@@ -20,11 +22,11 @@ const WORD_BANK = ['APPLE','STONE', 'CIRCLE', 'BACON', 'POINT', 'HOUSE', 'GROOM'
 
 
   /*----- state variables -----*/
-  let winningWord;
-  let numberLives;
-  let wrongGuesses;
-  let secretWord;
-    
+let winningWord;
+let numberLives;
+let wrongGuesses;
+let secretWord;
+let gameStatus;
   
     
 
@@ -35,6 +37,7 @@ const WORD_BANK = ['APPLE','STONE', 'CIRCLE', 'BACON', 'POINT', 'HOUSE', 'GROOM'
 const letterEls = document.getElementById('letters');
 const answerBoxEls = document.getElementById('answer-spaces');
 const hintClick = document.getElementById('hint-btn');
+const spaceMan = document.querySelector('img')
 
 
 
@@ -42,14 +45,17 @@ const hintClick = document.getElementById('hint-btn');
 letterEls.addEventListener('click', handleClick) 
 answerBoxEls.addEventListener('click', handleClick)
 hintClick.addEventListener('click', handleClick)
-
+document.getElementById('letters').addEventListener('click', handleClick)
   /*----- functions -----*/
   
 
 
 
   function init () {
-    secretWord = WORD_BANK[Math.floor(Math.random() * WORD_BANK.length)];
+    secretWord = WORD_BANK[Math.floor(Math.random() * WORD_BANK.length)].split('');
+    wrongGuesses = [];
+    wordStatus = secretWord.map(ltr => ' _ ');
+    gameStatus = null;
     render () 
   }
 
@@ -57,20 +63,27 @@ hintClick.addEventListener('click', handleClick)
 
 
   function handleClick (evt) {
-    console.log('OH YEAH')
+    console.log(evt.target)
   }
+
+
 
   function render () {
-    renderAnswerBoxes()
+    answerBoxEls.textContent = wordStatus.join('')
+    spaceMan.src = `img/spaceman-${wrongGuesses.length}.jpg`;
   }
+//     renderAnswerBoxes()
+//   }
 
-  function renderAnswerBoxes() {
-    let strsecretWord = secretWord.toString();
-    for (let i = 0; i < secretWord.length; i++) {
-        answerBoxEls.innerHTML = `<div id="answer-letter">hello</div>`
+//   function renderAnswerBoxes() {
+//     let strsecretWord = secretWord.toString();
+//     for (let i = 0; i < secretWord.length; i++) {
+//         answerBoxEls.innerHTML = `<div id="answer-letter">hello</div>`
     
-        }
-    };
+//         }
+//     };
+
+    
     
 
     

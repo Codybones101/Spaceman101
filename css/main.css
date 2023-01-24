@@ -135,6 +135,7 @@ margin-right: 500px;
 #answer-spaces {
    display: flex;
    cursor: pointer;
+   background: aqua;
 
 }
 
