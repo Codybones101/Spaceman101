@@ -83,9 +83,9 @@ function render() {
 
 function renderMessage() {
     if (gameStatus === "L") {
-        message.textContent = "Unfortunately, this isn't your day. Prepare to board spacecraft for return to earth!"
+        message.textContent = "Unfortunately, this isn't your day, we're so sorry but prepare to board spacecraft for return to earth."
     } else if(gameStatus === "W") {
-        message.textContent = "STELLAR, you've conquored the galaxy and Elon Musk himself has crowned you Supreme leader of Mars!"
+        message.textContent = "STELLAR, you've conquered the galaxy and Elon Musk himself has crowned you Supreme leader of Mars!"
     } else {
         message.textContent = ""
     }
