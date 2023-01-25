@@ -3,23 +3,7 @@
 
 const WORD_BANK = ['APPLE','STONE', 'CIRCLE', 'BACON', 'POINT', 'HOUSE', 'GROOM', 'SHOE', 'BREAD', 'ACORN'];
 
-
-
-
-
-
-
  /*----- constants -----*/
-
-
-
-
- 
-
-
- 
-
-
 
   /*----- state variables -----*/
 let winningWord;
@@ -28,18 +12,12 @@ let wrongGuesses;
 let secretWord;
 let gameStatus;
   
-    
-
-
-
-
   /*----- cached elements  -----*/
 const letterEls = document.getElementById('letters');
 const answerBoxEls = document.getElementById('answer-spaces');
 const hintClick = document.getElementById('hint-btn');
 const spaceMan = document.querySelector('img');
 const numLiveEl = document.getElementById("numberLives");
-
 
 
   /*----- event listeners -----*/
@@ -49,9 +27,6 @@ hintClick.addEventListener('click', handleClick)
 document.getElementById('letters').addEventListener('click', handleClick)
   /*----- functions -----*/
   
-
-
-
   function init () {
     secretWord = WORD_BANK[Math.floor(Math.random() * WORD_BANK.length)].split('');
     wrongGuesses = [];
