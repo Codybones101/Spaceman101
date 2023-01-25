@@ -1,7 +1,7 @@
  /*----- constants -----*/
 
 
-const WORD_BANK = ['APPLE','STONE', 'CIRCLE', 'BACON', 'POINT', 'HOUSE', 'GROOM', 'SHOE', 'BREAD', 'ACORN'];
+const WORD_BANK = ['ATMOSPHERE','ELECTROMAGNETIC SPECTRUM', 'GALAXY', 'UNIVERSE', 'GRAVITY', 'NEBULA', 'SPACECRAFT', 'SUPERNOVA', 'EXOPLANET', 'GAMMARAY'];
 
  /*----- constants -----*/
 
@@ -35,7 +35,7 @@ function init() {
     wrongGuesses = [];
     wordStatus = secretWord.map(ltr => ' _ ');
     gameStatus = null;
-    numberLives = 4;
+    numberLives = 6;
     render();
 }
 
@@ -83,9 +83,9 @@ function render() {
 
 function renderMessage() {
     if (gameStatus === "L") {
-        message.textContent = "You Loss!"
+        message.textContent = "Unfortunately, this isn't your day. Prepare to board spacecraft for return to earth!"
     } else if(gameStatus === "W") {
-        message.textContent = "You win!"
+        message.textContent = "STELLAR, you've conquored the galaxy and Elon Musk himself has crowned you Supreme leader of Mars!"
     } else {
         message.textContent = ""
     }
