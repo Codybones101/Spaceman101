@@ -72,6 +72,7 @@ function renderLivesLeft () {
 function renderMan() {
     answerBoxEls.textContent = wordStatus.join('')
     spaceMan.src = `img/spaceman-${wrongGuesses.length}.jpg`;
+    
     renderLivesLeft();
 }
 

@@ -2,10 +2,8 @@
     box-sizing: border-box;
 }
 
-
-
 body {
-    background-image: url("/bg-space.jpeg");
+    background-image: url("../bg-space.jpeg");
     height: 100vh;
     width: 100vw;
     background-image: cover;
@@ -13,9 +11,6 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
 }
-
-
-    
 
 h1 {
     display: flex;
@@ -25,8 +20,6 @@ h1 {
     font-size: 100px;
 }
     
-
-
 
 h2 {
     display: flex;
@@ -47,7 +40,6 @@ h3 {
     
 }
 
-
 h4 {
     display: flex;
     justify-content: center;
@@ -55,14 +47,11 @@ h4 {
     color: aqua;
     font-size: 20px;
 
-
 }
-
 
 .notify-if-hidden {
     display: flex;
-    justify-content: center;
-    
+    justify-content: center; 
 }
 
 .lives {
@@ -134,8 +123,6 @@ margin-right: 500px;
 
 }
 
-
-
 #answer-spaces {
    display: flex;
    cursor: pointer;
@@ -146,9 +133,7 @@ margin-right: 500px;
 #answer-letter {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    
-    gap: 30px;
-    
+    gap: 30px; 
 }
 
 #answer-spaces > div {
@@ -156,7 +141,6 @@ margin-right: 500px;
     text-align: center;
     background-color: white;
     margin-top: 50px;
-    
 }
 
 .gm-ovr {
@@ -167,8 +151,7 @@ margin-right: 500px;
     visibility: hidden;
 }
 
-#man {
-    
+#man { 
     height: 100px;
     width: 100px;
     margin: 25px auto;
