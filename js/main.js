@@ -37,8 +37,8 @@ let gameStatus;
 const letterEls = document.getElementById('letters');
 const answerBoxEls = document.getElementById('answer-spaces');
 const hintClick = document.getElementById('hint-btn');
-const spaceMan = document.querySelector('img')
-
+const spaceMan = document.querySelector('img');
+const numLiveEl = document.getElementById("numberLives");
 
 
 
@@ -57,7 +57,11 @@ document.getElementById('letters').addEventListener('click', handleClick)
     wrongGuesses = [];
     wordStatus = secretWord.map(ltr => ' _ ');
     gameStatus = null;
-    render () 
+    numberLives = 4;
+    
+    
+
+    render ();
   }
 
   init();
@@ -65,27 +69,38 @@ document.getElementById('letters').addEventListener('click', handleClick)
 
   function handleClick (evt) {
       const letter = evt.target.textContent
-    if(gameStatus || evt.target.tagName !== 'BUTTON' || wrongGuesses.includes(letter) || secretWord.includes(letter)) return;
+    if(gameStatus || evt.target.tagName !== 'BUTTON' || wrongGuesses.includes(letter) || wordStatus.includes(letter)) return;
     console.log(evt.target.textContent)
     if(secretWord.includes(letter)) {
        secretWord.forEach((char, idx) => {
         if(char === letter) wordStatus[idx] = letter
        } )
+    //    wrongGuesses = wordStatus;
     } else {
-        wrongGuesses.push(letter)
+        wrongGuesses.push(letter);
+        numberLives = numberLives -1;
     }
     
     render();
   }
+
+  function renderLivesLeft () {
+    numLiveEl.textContent = `Lives remaining: ${numberLives}`;
+  }
+//     render();
+
+//   }
+
     
 
-
+   
 
 
 
   function render () {
     answerBoxEls.textContent = wordStatus.join('')
     spaceMan.src = `img/spaceman-${wrongGuesses.length}.jpg`;
+    renderLivesLeft();
   }
 
   
