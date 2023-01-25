@@ -18,6 +18,8 @@ const answerBoxEls = document.getElementById('answer-spaces');
 const hintClick = document.getElementById('hint-btn');
 const spaceMan = document.querySelector('img');
 const numLiveEl = document.getElementById("numberLives");
+const message = document.querySelector('.msg');
+const playButton = document.querySelector('.notify-btn');
 
 
   /*----- event listeners -----*/
@@ -25,84 +27,79 @@ letterEls.addEventListener('click', handleClick)
 answerBoxEls.addEventListener('click', handleClick)
 hintClick.addEventListener('click', handleClick)
 document.getElementById('letters').addEventListener('click', handleClick)
+playButton.addEventListener('click', init)
   /*----- functions -----*/
   
-  function init () {
+function init() {
     secretWord = WORD_BANK[Math.floor(Math.random() * WORD_BANK.length)].split('');
     wrongGuesses = [];
     wordStatus = secretWord.map(ltr => ' _ ');
     gameStatus = null;
     numberLives = 4;
-    
-    
+    render();
+}
 
-    render ();
-  }
-
-  init();
+init();
 
 
-  function handleClick (evt) {
-      const letter = evt.target.textContent
+function handleClick (evt) {
+    const letter = evt.target.textContent
     if(gameStatus || evt.target.tagName !== 'BUTTON' || wrongGuesses.includes(letter) || wordStatus.includes(letter)) return;
-    console.log(evt.target.textContent)
+ 
     if(secretWord.includes(letter)) {
-       secretWord.forEach((char, idx) => {
-        if(char === letter) wordStatus[idx] = letter
-       } )
-    //    wrongGuesses = wordStatus;
+        secretWord.forEach((char, idx) => {
+            if(char === letter) wordStatus[idx] = letter
+        })
+        if(wordStatus.join('') === secretWord.join('')) {
+            gameStatus = "W"
+        }
     } else {
         wrongGuesses.push(letter);
-        numberLives = numberLives -1;
+        if (numberLives > 0) {
+            numberLives = numberLives -1;
+        } 
+        if (numberLives === 0) {
+            gameStatus = "L"
+        } 
     }
-    
     render();
-  }
+}
 
-  function renderLivesLeft () {
+function renderLivesLeft () {
     numLiveEl.textContent = `Lives remaining: ${numberLives}`;
-  }
-//     render();
+}
 
-//   }
-
-    
-
-   
-
-
-
-  function render () {
+function renderMan() {
     answerBoxEls.textContent = wordStatus.join('')
     spaceMan.src = `img/spaceman-${wrongGuesses.length}.jpg`;
     renderLivesLeft();
-  }
+}
 
-  
-//     renderAnswerBoxes()
-//   }
-
-//   function renderAnswerBoxes() {
-//     let strsecretWord = secretWord.toString();
-//     for (let i = 0; i < secretWord.length; i++) {
-//         answerBoxEls.innerHTML = `<div id="answer-letter">hello</div>`
-    
-//         }
-//     };
-
-    
-    
-
-    
-
-    
-
-    
-
-    
-    
+function render() {
+    renderMan()
+    renderMessage()
+}
 
 
-  
-  
-  
+function renderMessage() {
+    if (gameStatus === "L") {
+        message.textContent = "You Loss!"
+    } else if(gameStatus === "W") {
+        message.textContent = "You win!"
+    } else {
+        message.textContent = ""
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
