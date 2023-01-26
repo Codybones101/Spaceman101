@@ -2,7 +2,7 @@
 
 
 const WORD_BANK = ['ATMOSPHERE','ELECTROMAGNETIC', 'GALAXY', 'UNIVERSE', 'GRAVITY', 'NEBULA', 'SPACECRAFT', 'SUPERNOVA', 'EXOPLANET', 'GAMMARAY'];
-const HINTS = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+const HINTS = ['The gases held by gravity around Earth and around other planets.', 'relating to the interrelation of electric currents or fields and magnetic fields.', 'A collection of thousands to billions of stars held together by gravity.', '4', '5', '6', '7', '8', '9', '10'];
  /*----- constants -----*/
 
   /*----- state variables -----*/
