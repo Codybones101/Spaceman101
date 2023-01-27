@@ -28,11 +28,11 @@ You and your team of fellow astronauts have crash landed on Mars and it is up to
 
 ## Screenshots of gameplay:
 ### - At game start -
-![alt text](ss-images/ss1.png)
+![alt text](img/ss-images/ss1.png)
 ### - At game win - 
-![alt text](ss-images/ss2.png)
+![alt text](img/ss-images/ss2.png)
 ### - Hint feature reveal -
-![alt text](ss-images/ss3.png)
+![alt text](img/ss-images/ss3.png)
 ## Technologies Used
 - JavaScript
 - HTML
