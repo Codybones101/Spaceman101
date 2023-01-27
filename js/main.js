@@ -2,7 +2,7 @@
 
 
 const WORD_BANK = ['ATMOSPHERE','ELECTROMAGNETIC', 'GALAXY', 'UNIVERSE', 'GRAVITY', 'NEBULA', 'SPACECRAFT', 'SUPERNOVA', 'EXOPLANET', 'GAMMARAY'];
-const HINTS = ['The gases held by gravity around Earth and around other planets.', 'relating to the interrelation of electric currents or fields and magnetic fields.', 'A collection of thousands to billions of stars held together by gravity.', '4', '5', '6', '7', '8', '9', '10'];
+const HINTS = ['The gases held by gravity around Earth and around other planets.', 'Relating to the interrelation of electric currents or fields and magnetic fields.', 'A collection of thousands to billions of stars held together by gravity.', 'All existing matter and space considered as a whole; the cosmos.', 'The force that attracts a body toward the center of the earth, or toward any other physical body having mass.', 'A cloud of gas and dust in outer space, visible in the night sky either as an indistinct bright patch or as a dark silhouette against other luminous matter.', 'A vehicle used for traveling in space.', 'A star that suddenly increases greatly in brightness because of a catastrophic explosion that ejects most of its mass.', 'Any planet beyond our solar system. Most orbit other stars, but free-floating exoplanets, called rogue planets, orbit the galactic center and are untethered to any star.', 'Electromagnetic radiation of the shortest wavelength and highest energy.'];
  /*----- constants -----*/
 
   /*----- state variables -----*/
@@ -14,6 +14,7 @@ let gameStatus;
 let gameHint;
   
   /*----- cached elements  -----*/
+const audio = document.getElementById("song"); 
 const letterEls = document.getElementById('letters');
 const answerBoxEls = document.getElementById('answer-spaces');
 const hintButton = document.getElementById('hint-btn');
@@ -21,8 +22,11 @@ const spaceMan = document.querySelector('img');
 const numLiveEl = document.getElementById("numberLives");
 const message = document.querySelector('.msg');
 const playButton = document.querySelector('.notify-btn');
-// const letterStyle = document.querySelectorAll('#letters' > 'button');
+const buttonColor = document.querySelectorAll('.wrapper > #letters > button');
+// const volume = document.getElementById('song');
 
+// const letterStyle = document.querySelectorAll('#letters' > 'button');
+song.volume = 0.1
 
   /*----- event listeners -----*/
 letterEls.addEventListener('click', handleClick) 
@@ -32,7 +36,9 @@ document.getElementById('letters').addEventListener('click', handleClick)
 playButton.addEventListener('click', init)
   /*----- functions -----*/
   
+
 function init() {
+    audio.play();
     let idx = Math.floor(Math.random() * WORD_BANK.length);
     secretWord = WORD_BANK[idx].split('');
     gameHint = HINTS[idx];
@@ -66,6 +72,7 @@ function handleClick (evt) {
         if (numberLives === 0) {
             gameStatus = "L"
         }
+        
     }
     render();
 }
@@ -81,17 +88,11 @@ function renderMan() {
     renderLivesLeft();
 }
 
-function render() {
-    renderMan()
-    renderMessage()
-}
-
-
 function renderMessage() {
     if (gameStatus === "L") {
         message.textContent = "Unfortunately, this isn't your day, we're so sorry, but prepare to board spacecraft for return to earth."
     } else if(gameStatus === "W") {
-        message.textContent = "STELLAR, you've conquered the galaxy and have been crowned by Elon Musk as Supreme leader of Mars!"
+        message.textContent = "STELLAR, you've conquered the galaxy and have been crowned Supreme Leader of Mars by Elon Musk personally!"
     } else {
         message.textContent = ""
     }
@@ -102,11 +103,29 @@ function handleHint() {
 
 }
 
-// function renderButtonStyle() {
-//     letterStyle.forEach()
-// }
+function renderButtonStyle() {
+    letterStyle.forEach()
+}
 
+function renderButtonStyle() {
+    buttonColor.forEach(function(btn) {
+      const letter = btn.textContent;
+      if (wrongGuesses.includes(letter)) {
+        btn.className = 'Incorrect';
+      } else if (wordStatus.includes(letter)) {
+        btn.className = 'Correct';
+      } else {
+        btn.className = ''
+      }
+    });
+  }
 
+  function render() {
+    renderMan();
+    renderMessage();
+    renderButtonStyle();
+    handleHint();
+}
 
 
 
