@@ -1,11 +1,7 @@
- /*----- constants -----*/
-
 
 const WORD_BANK = ['ATMOSPHERE','ELECTROMAGNETIC', 'GALAXY', 'UNIVERSE', 'GRAVITY', 'NEBULA', 'SPACECRAFT', 'SUPERNOVA', 'EXOPLANET', 'GAMMARAY'];
 const HINTS = ['The gases held by gravity around Earth and around other planets.', 'Relating to the interrelation of electric currents or fields and magnetic fields.', 'A collection of thousands to billions of stars held together by gravity.', 'All existing matter and space considered as a whole; the cosmos.', 'The force that attracts a body toward the center of the earth, or toward any other physical body having mass.', 'A cloud of gas and dust in outer space, visible in the night sky either as an indistinct bright patch or as a dark silhouette against other luminous matter.', 'A vehicle used for traveling in space.', 'A star that suddenly increases greatly in brightness because of a catastrophic explosion that ejects most of its mass.', 'Any planet beyond our solar system. Most orbit other stars, but free-floating exoplanets, called rogue planets, orbit the galactic center and are untethered to any star.', 'Electromagnetic radiation of the shortest wavelength and highest energy.'];
- /*----- constants -----*/
 
-  /*----- state variables -----*/
 let winningWord;
 let numberLives;
 let wrongGuesses;
@@ -13,7 +9,6 @@ let secretWord;
 let gameStatus;
 let gameHint;
   
-  /*----- cached elements  -----*/
 const audio = document.getElementById("song"); 
 const letterEls = document.getElementById('letters');
 const answerBoxEls = document.getElementById('answer-spaces');
@@ -23,19 +18,14 @@ const numLiveEl = document.getElementById("numberLives");
 const message = document.querySelector('.msg');
 const playButton = document.querySelector('.notify-btn');
 const buttonColor = document.querySelectorAll('.wrapper > #letters > button');
-// const volume = document.getElementById('song');
 
-// const letterStyle = document.querySelectorAll('#letters' > 'button');
 song.volume = 0.1
 
-  /*----- event listeners -----*/
 letterEls.addEventListener('click', handleClick) 
 answerBoxEls.addEventListener('click', handleClick)
 hintButton.addEventListener('click', handleHint)
 document.getElementById('letters').addEventListener('click', handleClick)
 playButton.addEventListener('click', init)
-  /*----- functions -----*/
-  
 
 function init() {
     audio.play();
@@ -46,12 +36,11 @@ function init() {
     wordStatus = secretWord.map(ltr => ' _ ');
     gameStatus = null;
     numberLives = 6;
-    // document.getElementById('hint').textContent = "";
+    document.getElementById('hint').textContent = "";
     render();
 }
 
 init();
-
 
 function handleClick (evt) {
     const letter = evt.target.textContent
@@ -73,8 +62,7 @@ function handleClick (evt) {
             gameStatus = "L"
         }
     }
-    render();
-        
+    render();  
 }
 
 function renderLivesLeft () {
@@ -84,7 +72,6 @@ function renderLivesLeft () {
 function renderMan() {
     answerBoxEls.textContent = wordStatus.join('')
     spaceMan.src = `img/spaceman-${wrongGuesses.length}.jpg`;
-    
     renderLivesLeft();
 }
 
@@ -122,9 +109,7 @@ function renderButtonStyle() {
   function render() {
     renderMan();
     renderMessage();
-    // handleHint();
-    renderButtonStyle();
-    // handleHint();
+    renderButtonStyle(); 
 }
 
 
