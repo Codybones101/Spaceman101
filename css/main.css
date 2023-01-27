@@ -17,12 +17,9 @@ h1 {
     justify-content: center;
     align-items: center;
     color: purple;
-    font-size: 10vmin;
-    
-    
+    font-size: 10vmin; 
 }
     
-
 h2 {
     display: flex;
     position: bottom;
@@ -39,7 +36,6 @@ h3 {
     margin-top: 1vmin;
     font-size: 40px;
     color: aqua;
-    
 }
 
 .notify-if-hidden {
@@ -65,7 +61,6 @@ h3 {
     color: white;
     font-size: 20px;
     text-align: center;
-
 }
 
 .hint-btn {
@@ -90,7 +85,6 @@ margin-right: 500px;
     gap: 20px;
     justify-items: center;
     cursor: pointer;
-
 }
 
 #letters > div {
@@ -98,14 +92,11 @@ margin-right: 500px;
     text-align: center;
     background-color: white;
     cursor: pointer;
-
 }
 
 #hint-btn {
     margin: 0px auto;
     padding: 3px 10px;
-    /* width: 250px; */
-    
 }
 
 .hint-div {
@@ -119,7 +110,6 @@ margin-right: 500px;
     display: flex;
     justify-content: left;
     color: whitesmoke;
-
 }
 
 #answer-spaces {
@@ -129,7 +119,6 @@ margin-right: 500px;
    color: white;  
    font-size: 30px; 
    margin-top: 20px;
-
 }
 
 #answer-letter {
@@ -165,5 +154,3 @@ margin-right: 500px;
 .Correct {
     background-color: greenyellow;
 }
-    
-

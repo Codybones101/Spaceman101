@@ -111,14 +111,3 @@ function renderButtonStyle() {
     renderMessage();
     renderButtonStyle(); 
 }
-
-
-
-
-
-
-
-
-
-
-
