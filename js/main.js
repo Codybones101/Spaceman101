@@ -122,7 +122,7 @@ function renderButtonStyle() {
   function render() {
     renderMan();
     renderMessage();
-    handleHint();
+    // handleHint();
     renderButtonStyle();
     // handleHint();
 }
