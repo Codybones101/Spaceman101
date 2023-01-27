@@ -46,7 +46,7 @@ function init() {
     wordStatus = secretWord.map(ltr => ' _ ');
     gameStatus = null;
     numberLives = 6;
-    document.getElementById('hint').textContent = "";
+    // document.getElementById('hint').textContent = "";
     render();
 }
 
@@ -72,9 +72,9 @@ function handleClick (evt) {
         if (numberLives === 0) {
             gameStatus = "L"
         }
-        
     }
     render();
+        
 }
 
 function renderLivesLeft () {
@@ -100,7 +100,6 @@ function renderMessage() {
 
 function handleHint() {
     document.getElementById('hint').textContent = gameHint;
-
 }
 
 function renderButtonStyle() {
@@ -123,8 +122,9 @@ function renderButtonStyle() {
   function render() {
     renderMan();
     renderMessage();
-    renderButtonStyle();
     handleHint();
+    renderButtonStyle();
+    // handleHint();
 }
 
 
