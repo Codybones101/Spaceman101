@@ -79,23 +79,25 @@ margin-right: 500px;
 
 #letters {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    gap: 20px;
-    justify-items: center;
     cursor: pointer;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    border: 30px;
+    justify-items: center;
+    border-radius: 50px;
 }
 
 #letters > div {
     padding: 10px;
     text-align: center;
-    background-color: white;
     cursor: pointer;
 }
 
 #hint-btn {
     margin: 0px auto;
     padding: 3px 10px;
+    cursor: pointer;
 }
 
 .hint-div {
@@ -113,7 +115,6 @@ margin-right: 500px;
 
 #answer-spaces {
    display: flex;
-   cursor: pointer;
    justify-content: center;
    color: white;  
    font-size: 30px; 
